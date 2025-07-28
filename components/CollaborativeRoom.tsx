@@ -10,6 +10,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import { Editor } from "./editor/Editor";
+import ActiveCollaborators from "./ActiveCollaborators";
 
 const CollaborativeRoom = () => {
   return (
@@ -20,7 +21,10 @@ const CollaborativeRoom = () => {
             <div className="flex w-fit items-center justify-center gap-2">
               <p className="document-title">Share</p>
             </div>
+<div className="flex w-full flex-1 justify-end gap-2 sm:gap-3 ">
+  <ActiveCollaborators/>
 
+</div>
             <SignedOut>
               <SignInButton />
               <SignUpButton></SignUpButton>
@@ -30,7 +34,7 @@ const CollaborativeRoom = () => {
             </SignedIn>
           </Header>
           <Editor />
-        </div>
+        </div> 
       </ClientSideSuspense>
     </RoomProvider>
   );
